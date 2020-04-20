@@ -3,7 +3,7 @@
 Using this web service, user is able to authenticate via gmail account and can create and see events of his Google Calendar.
 (event is created on the date 3-5 April, Please check Title and Body over there)
 
-Events are returned in JSON formar, instal JSONview for pretty and neat ouput.
+(As events are returned in JSON format, install JSONview chrome extension for pretty and neat ouput.)
 
 Dependencies : 
 
