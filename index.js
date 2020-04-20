@@ -12,13 +12,20 @@ const app = express()
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
+if(port == process.env.PORT){
+  callbackURL_checked = 'https://calendar-mridul.herokuapp.com/google/callback'
+} else 
+{
+  callbackURL_checked = config.callbackURL
+}
+
 //google-strategy
 passport.use(
     new GoogleStrategy(
       {
         clientID: config.clientID,
         clientSecret: config.clientSecret,
-        callbackURL: config.callbackURL
+        callbackURL: callbackURL_checked
       },
       (accessToken, refreshToken, profile, done) => {          
            done(null, refreshToken);
@@ -29,7 +36,7 @@ passport.use(
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(passport.initialize());
 
-const routes = require("./routes");
+const routes = require("./api/routes");
 app.use("/", routes);
 
 app.listen(port, () => console.log(`App is up and running on port ${port}.`));

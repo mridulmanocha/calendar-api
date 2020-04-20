@@ -1,17 +1,19 @@
 const express = require('express')
 const router = express.Router();
 const passport = require("passport");
+path = require('path')
 
-var calendar = require("./calendar.js");
+
+var calendar = require("../calendar");
 
 //home-page
 router.get('/',function(req,res){
-  res.sendFile(__dirname + '/views/index.html'); 
+  res.sendFile((path.join(__dirname , '../../views/index.html'))); 
 });
 
 //event-page
 router.get('/event',function(req,res){
-  res.sendFile(__dirname + '/views/event.html');
+  res.sendFile((path.join(__dirname , '../../views/event.html'))); 
 });
 
 //create-event
