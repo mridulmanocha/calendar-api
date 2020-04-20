@@ -12,3 +12,7 @@ Dependencies :
     "mongoose": "^5.9.9",
     "passport": "^0.4.1",
     "passport-google-oauth2": "^0.2.0"
+
+Project live on :
+
+    https://calendar-mridul.herokuapp.com/
