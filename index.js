@@ -3,12 +3,12 @@ const bodyParser= require('body-parser')
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
-const port = process.env.PORT || 3000;
-
 var config = require("./oauth.js");
 
+const port = process.env.PORT || 3000;
 const app = express()
 
+//serializer-deserializer
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
@@ -21,9 +21,7 @@ passport.use(
         callbackURL: config.callbackURL
       },
       (accessToken, refreshToken, profile, done) => {          
-          
-          done(null, refreshToken);
-
+           done(null, refreshToken);
     }
   )
 )
