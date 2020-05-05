@@ -6,8 +6,8 @@ var config = require("./oauth.js");
 exports.create_event = (req, res) => {
 
 const oAuth2Client = new OAuth2(
-            config.clientID,
-            config.clientSecret
+            process.env.CLIENT_ID,
+            process.env.CLIENT_SECRET
 )
 
 oAuth2Client.setCredentials({
