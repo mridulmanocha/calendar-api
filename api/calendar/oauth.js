@@ -1,7 +1,7 @@
 var google = {
-        clientID : '551744569484-mto8h4n8lqbm9ttqa4sjd90ejinrrnmb.apps.googleusercontent.com',
-        clientSecret : 'VUqM1fReHSCW9Zjg8vlYFtDJ',
-        callbackURL: 'http://localhost:3000/google/callback'
+        clientID : process.env.CLIENT_ID,
+        clientSecret : process.env.CLIENT_SECRET,
+        callbackURL: process.env.CALLBACK_URL
 }
 
 module.exports = google;

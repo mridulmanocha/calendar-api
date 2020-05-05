@@ -12,8 +12,8 @@ const app = express()
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
-if(port == process.env.PORT){
-  callbackURL_checked = 'https://calendar-mridul.herokuapp.com/google/callback'
+if(port == 3000){
+  callbackURL_checked = 'http://localhost:3000/google/callback'
 } else 
 {
   callbackURL_checked = config.callbackURL
