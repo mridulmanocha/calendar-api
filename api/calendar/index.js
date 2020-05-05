@@ -1,8 +1,6 @@
 const { google } = require('googleapis')
 const { OAuth2 } = google.auth
 
-var config = require("./oauth.js");
-
 exports.create_event = (req, res) => {
 
 const oAuth2Client = new OAuth2(
